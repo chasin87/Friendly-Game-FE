@@ -5,6 +5,7 @@ import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { selectToken } from "../../store/user/selectors";
 import NavbarItem from "./NavbarItem";
+import Logo from "../../images/logo.png";
 import LoggedIn from "./LoggedIn";
 import LoggedOut from "./LoggedOut";
 
@@ -16,7 +17,7 @@ export default function Navigation() {
   return (
     <Navbar bg="light" expand="lg">
       <Navbar.Brand as={NavLink} to="/">
-        YOUR PROJECT NAME
+        <img src={Logo} alt="logo" style={{ width: 130, marginBottom: -70 }} />
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
