@@ -57,10 +57,9 @@
 
 .First-block-text {
   background-color: #0a0a45;
-  color: #fff;
+  color: #0a0a45;
   padding: 20px 0px;
   margin: 20px 0px;
-  font-size: 21px;
   text-align: center;
 
   -webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */
