@@ -10,6 +10,7 @@ import SignUp from "./pages/SignUp";
 import Login from "./pages/Login";
 import CreateGame from "./pages/CreateGame";
 import GameList from "./pages/GameList";
+import AccountPage from "./pages/AccountPage";
 
 import { useDispatch, useSelector } from "react-redux";
 import { selectAppLoading } from "./store/appState/selectors";
@@ -32,6 +33,7 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route path="/creategame" component={CreateGame} />
         <Route path="/gamelist" component={GameList} />
+        <Route exact path="/account" component={AccountPage} />
         <Route path="/signup" component={SignUp} />
         <Route path="/login" component={Login} />
       </Switch>

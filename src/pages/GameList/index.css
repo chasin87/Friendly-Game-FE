@@ -22,7 +22,7 @@
   font-weight: 200;
   font-size: 18px;
   border-radius: 2px;
-  border: 1px solid #0a0a45;
+  border: 2px solid #0a0a45;
   text-align: center;
 }
 .ContainerBox {
@@ -45,7 +45,8 @@ label {
 
 @media only screen and (max-width: 600px) {
   .Header-page h1 {
-    font-size: 20px;
+    font-size: 18px;
+    padding: 13px;
   }
   .flex-container {
     display: grid;
@@ -63,7 +64,7 @@ label {
     font-weight: 200;
     font-size: 18px;
     border-radius: 2px;
-    border: 1px solid #0a0a45;
+    border: 2px solid #0a0a45;
     text-align: center;
   }
 }
