@@ -1,15 +1,15 @@
 import React from "react";
-import { useSelector } from "react-redux";
-import { selectUser } from "../../store/user/selectors";
-import Loading from "../../components/Loading";
-import { useHistory } from "react-router-dom";
-import { Container } from "react-bootstrap";
+// import { useSelector } from "react-redux";
+// import { selectUser } from "../../store/user/selectors";
+// import Loading from "../../components/Loading";
+// import { useHistory } from "react-router-dom";
+// import { Container } from "react-bootstrap";
 import HYS from "../../images/HYS.png";
 import "./index.css";
 
 export default function AccountPage() {
-  const { token, name, email, id, ranking } = useSelector(selectUser);
-  const history = useHistory();
+  // const { token, name, email, id, ranking } = useSelector(selectUser);
+  // const history = useHistory();
   // if (token === null) {
   //   history.push("/");
   // }

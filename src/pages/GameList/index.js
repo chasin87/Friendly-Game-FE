@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useState, useSelector } from "react";
 import Container from "react-bootstrap/Container";
 import "./index.css";
+// import { selectUser } from "../../store/user/selectors";
 
 export default function GameList() {
+  // const { name, id } = useSelector(selectUser);
+  const [alert, setAlert] = useState(0);
+
+  function add() {
+    setAlert(alert + 1);
+    console.log(`Name whant's a friendly game againts your team `);
+  }
+
   return (
     <div>
       <div className="Header-page">
@@ -29,7 +38,13 @@ export default function GameList() {
             <label>Place</label>
             <div className="Place">Home</div>
           </Container>
-          <button className="button">Send request</button>
+
+          <button onClick={add} className="button">
+            Send request
+          </button>
+
+          <br />
+          <label>{alert}</label>
         </Container>
       </Container>
     </div>
