@@ -1,0 +1,54 @@
+.Header-page {
+  text-align: center;
+  background-color: #0a0a45;
+  color: white;
+  padding: 20px 0px;
+  margin: 0px 0px;
+}
+
+.flex-container {
+  display: grid;
+  grid-template-columns: 30%;
+  background-color: white;
+  padding: 20px;
+  margin: 20px;
+}
+
+.ContainerCard {
+  padding: 20px;
+  background-color: white;
+  margin: 20px;
+  font-weight: 200;
+  font-size: 18px;
+  border-radius: 2px;
+  border: 1px solid #0a0a45;
+  text-align: center;
+}
+.ContainerBox {
+  background-color: white;
+  padding: 20px;
+}
+
+.button {
+  background-color: #0a0a45;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  margin-top: 8px;
+  width: 70%;
+}
+
+label {
+  font-weight: 600;
+}
+
+@media only screen and (max-width: 600px) {
+  .flex-container {
+    display: grid;
+    grid-template-columns: 90%;
+    background-color: white;
+    padding: 20px;
+    margin: 20px;
+    justify-content: center;
+  }
+}
