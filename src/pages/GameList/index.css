@@ -12,6 +12,7 @@
   background-color: white;
   padding: 20px;
   margin: 20px;
+  justify-content: center;
 }
 
 .ContainerCard {
@@ -43,6 +44,9 @@ label {
 }
 
 @media only screen and (max-width: 600px) {
+  .Header-page h1 {
+    font-size: 20px;
+  }
   .flex-container {
     display: grid;
     grid-template-columns: 90%;
@@ -50,5 +54,16 @@ label {
     padding: 20px;
     margin: 20px;
     justify-content: center;
+  }
+
+  .ContainerCard {
+    padding: 20px;
+    background-color: white;
+    margin: 20px;
+    font-weight: 200;
+    font-size: 18px;
+    border-radius: 2px;
+    border: 1px solid #0a0a45;
+    text-align: center;
   }
 }
