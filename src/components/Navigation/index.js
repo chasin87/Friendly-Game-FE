@@ -24,12 +24,7 @@ export default function Navigation() {
         <Nav style={{ width: "100%" }} fill>
           <NavbarItem path="/" linkText="Home" />
           <NavbarItem path="/gamelist" linkText="Game List" />
-          {/*Created to
-          see the page this needs to removed on final version */}
-          <NavbarItem path="/creategame" linkText="Create Game" />{" "}
-          <NavbarItem path="/account" linkText="Account Page" />
-          {/*Created to
-          see the page this needs to removed on final version */}
+
           {token ? (
             <NavbarItem path="/creategame" linkText="Create Game" />
           ) : null}
