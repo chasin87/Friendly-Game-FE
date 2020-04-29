@@ -3,14 +3,14 @@ import { apiUrl } from "../../config/constants";
 
 export const FETCH_GAMES = "FETCH_GAMES";
 
-export const fetchGames = (games) => ({
+export const fetchGames = (matches) => ({
   type: FETCH_GAMES,
-  payload: games,
+  payload: matches,
 });
 
 export function fetchGamesList() {
   return async (dispatch, getState) => {
-    const response = await axios.get(`${apiUrl}/games/`);
+    const response = await axios.get(`${apiUrl}/matches/`);
 
     dispatch(fetchGames(response.data));
   };

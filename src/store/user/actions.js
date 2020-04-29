@@ -11,20 +11,6 @@ import {
 export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
 export const TOKEN_STILL_VALID = "TOKEN_STILL_VALID";
 export const LOG_OUT = "LOG_OUT";
-export const FETCH_TEAMS_SUCCESS = "FETCH_TEAMS_SUCCESS";
-
-export const fetchTeamsSuccess = (users) => ({
-  type: FETCH_TEAMS_SUCCESS,
-  payload: users,
-});
-
-export function fetchTeamsList() {
-  return async (dispatch, getState) => {
-    const response = await axios.get(`${apiUrl}/:id`);
-
-    dispatch(fetchTeamsSuccess(response.data));
-  };
-}
 
 const loginSuccess = (userWithToken) => {
   return {

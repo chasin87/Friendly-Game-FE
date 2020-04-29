@@ -1,1 +1,1 @@
-export const selectTeams = (state) => state.games;
+export const selectMatches = (state) => state.matches;

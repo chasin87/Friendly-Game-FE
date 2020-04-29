@@ -1,16 +1,13 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { selectTeams } from "../../store/user/selectors";
+
 import { selectUser } from "../../store/user/selectors";
 import Loading from "../../components/Loading";
 import { useHistory } from "react-router-dom";
 
-import HYS from "../../images/HYS.png";
 import "./index.css";
 
 export default function AccountPage() {
-  console.log(selectTeams);
-
   const { token, name, email, klasse, logo } = useSelector(selectUser);
   const history = useHistory();
   if (token === null) {
@@ -37,8 +34,6 @@ export default function AccountPage() {
         </a>
         <p>{klasse}</p>
       </div>
-
-      {/* <TeamCard id={id} name={name} email={email} ranking={ranking} /> */}
     </div>
   );
 }
