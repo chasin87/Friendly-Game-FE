@@ -10,7 +10,7 @@ export const fetchGames = (matches) => ({
 
 export function fetchGamesList() {
   return async (dispatch, getState) => {
-    const response = await axios.get(`${apiUrl}/matches/`);
+    const response = await axios.get(`${apiUrl}/match/`);
 
     dispatch(fetchGames(response.data));
   };

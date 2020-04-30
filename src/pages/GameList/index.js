@@ -9,7 +9,6 @@ import "./index.css";
 export default function GameList() {
   const dispatch = useDispatch();
   const Matches = useSelector(selectMatches);
-  console.log(selectMatches);
   const [alert, setAlert] = useState(0);
 
   useEffect(() => {
@@ -20,7 +19,7 @@ export default function GameList() {
     setAlert(alert + 1);
     console.log(`Name whant's a friendly game againts your team `);
   }
-  ///////////////////////ga verder met game list / matches laten zien
+
   return (
     <div>
       <div className="Header-page">
@@ -28,7 +27,7 @@ export default function GameList() {
       </div>{" "}
       {Matches.map((match) => {
         return (
-          <Container className="flex-container">
+          <Container key={match.id} className="flex-container">
             <Container className="ContainerCard">
               <Container className="ContainerBox">
                 <label>Team Name</label>
@@ -52,7 +51,7 @@ export default function GameList() {
 
               <Container className="ContainerBox">
                 <label>Match Id:</label>
-                <div className="Place">{match.id}</div>
+                <div className="Place">{match.matchId}</div>
               </Container>
 
               <button onClick={add} className="button">
@@ -60,7 +59,7 @@ export default function GameList() {
               </button>
 
               <br />
-              <label>{match.id}</label>
+              <label>{match.request}</label>
             </Container>
           </Container>
         );

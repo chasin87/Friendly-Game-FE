@@ -1,26 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./index.css";
+
 import { Form } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import { useDispatch } from "react-redux";
-import { login } from "../../store/user/actions";
+import { addMatch } from "../../store/createMatch/actions";
+
+import { fetchGamesList } from "../../store/gameList/actions";
 
 export default function CreateGame() {
   const dispatch = useDispatch();
   const [date, setDate] = useState("");
   const [time, setTime] = useState("10:00");
-  const [place, setPlace] = useState("");
+  const [side, setSide] = useState("");
+
+  useEffect(() => {
+    dispatch(fetchGamesList());
+  }, [dispatch]);
 
   function submitMatchForm(event) {
     event.preventDefault();
 
-    dispatch(login(date, time, place));
+    dispatch(addMatch(date, time, side));
 
     setDate("");
-    setTime("");
-    setPlace("");
-
-    console.log(date, time, place);
+    setTime("10:00");
+    setSide("");
   }
 
   return (
@@ -54,8 +59,8 @@ export default function CreateGame() {
           <select
             className="form-control"
             id="sel1"
-            value={place}
-            onChange={(event) => setPlace(event.target.value)}
+            value={side}
+            onChange={(event) => setSide(event.target.value)}
           >
             <option disabled value="" hidden>
               Please choose side.
