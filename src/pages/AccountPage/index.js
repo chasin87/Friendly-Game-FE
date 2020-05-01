@@ -9,6 +9,7 @@ import "./index.css";
 
 export default function AccountPage() {
   const { token, name, email, klasse, image } = useSelector(selectUser);
+  console.log(image);
   const history = useHistory();
   if (token === null) {
     history.push("/");

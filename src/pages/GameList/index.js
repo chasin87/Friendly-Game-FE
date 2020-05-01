@@ -12,19 +12,18 @@ export default function GameList() {
   const { token, name } = useSelector(selectUser);
   const dispatch = useDispatch();
   const Matches = useSelector(selectMatches);
-  const [request, setRequest] = useState(0);
 
   useEffect(() => {
     dispatch(fetchGamesList());
   }, [dispatch]);
 
-  function add() {
+  function add(matchName) {
     if (token === null) {
-      console.log("Please login to use this function");
+      alert("Please login to use this function");
     } else {
-      setRequest(request + 1);
-      console.log(`Name whant's a friendly game againts your team `);
-      dispatch(updateRequest(request));
+      console.log(
+        ` ${name} whant's a friendly game againts your team ${matchName}`
+      );
     }
   }
 
@@ -66,9 +65,6 @@ export default function GameList() {
                 <p>This is your own match</p>
 
                 <br />
-                <label>Requests send for friendly match</label>
-                <br />
-                <label>{match.request}</label>
               </Container>
             </Container>
           );
@@ -101,15 +97,10 @@ export default function GameList() {
                   <div className="Place">{match.matchId}</div>
                 </Container>
 
-                <button onClick={add} className="button">
+                <button className="button" onClick={() => add(match.name)}>
                   Send request
                 </button>
-
                 <br />
-                <br />
-                <label>Requests send for friendly match</label>
-                <br />
-                <label>{request}</label>
               </Container>
             </Container>
           );

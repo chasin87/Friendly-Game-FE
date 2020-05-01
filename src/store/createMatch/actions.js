@@ -17,7 +17,7 @@ export const addMatch = (date, time, side, userId) => {
     const token = state.user.token;
     const id = state.user.id;
     const name = state.user.name;
-    const matchId = state.matches.length;
+    const matchId = state.matches.length + 1;
     console.log("matchId", matchId);
 
     // console.log(token);
