@@ -8,7 +8,7 @@ import { useHistory } from "react-router-dom";
 import "./index.css";
 
 export default function AccountPage() {
-  const { token, name, email, klasse, logo } = useSelector(selectUser);
+  const { token, name, email, klasse, image } = useSelector(selectUser);
   const history = useHistory();
   if (token === null) {
     history.push("/");
@@ -24,7 +24,7 @@ export default function AccountPage() {
 
       <div className="Account-Container">
         <img
-          src={logo}
+          src={image}
           alt="logo"
           style={{ width: 130, marginTop: 10, marginBottom: 10 }}
         />

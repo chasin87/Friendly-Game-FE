@@ -12,7 +12,7 @@ export default (state = initialState, action) => {
       return {
         ...state,
         ...action.payload,
-        matcg: { ...action.payload, match: state.match },
+        match: { ...action.payload, match: state.match },
       };
 
     default:

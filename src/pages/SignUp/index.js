@@ -9,11 +9,12 @@ import { useHistory, Link } from "react-router-dom";
 import { Col } from "react-bootstrap";
 
 export default function SignUp() {
-  const [team, setTeam] = useState("");
+  const [name, setName] = useState("");
   const [image, setImage] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [division, setDivision] = useState("");
+  const [klasse, setKlasse] = useState("");
+  const [request, setRequest] = useState(0);
   const dispatch = useDispatch();
   const token = useSelector(selectToken);
   const history = useHistory();
@@ -27,13 +28,14 @@ export default function SignUp() {
   function submitForm(event) {
     event.preventDefault();
 
-    dispatch(signUp(team, image, email, password, division));
+    dispatch(signUp(name, image, email, password, klasse, request));
 
     setEmail("");
     setPassword("");
-    setTeam("");
-    setDivision("");
+    setName("");
+    setKlasse("");
     setImage("");
+    setRequest(0);
   }
 
   return (
@@ -46,8 +48,8 @@ export default function SignUp() {
           <Form.Group controlId="formBasicName">
             <Form.Label>Team</Form.Label>
             <Form.Control
-              value={team}
-              onChange={(event) => setTeam(event.target.value)}
+              value={name}
+              onChange={(event) => setName(event.target.value)}
               type="text"
               placeholder="Fc Soccer zat 1"
               required
@@ -59,7 +61,7 @@ export default function SignUp() {
             <Form.Control
               value={image}
               onChange={(event) => setImage(event.target.value)}
-              type="file"
+              type="input"
               placeholder="http://"
               required
             />
@@ -93,9 +95,9 @@ export default function SignUp() {
           <Form.Group controlId="formBasicNumber">
             <Form.Label>Klasse</Form.Label>
             <Form.Control
-              value={division}
-              onChange={(event) => setDivision(event.target.value)}
-              type="number"
+              value={klasse}
+              onChange={(event) => setKlasse(event.target.value)}
+              type="input"
               placeholder="bijv. 2e klasse"
               required
             />
