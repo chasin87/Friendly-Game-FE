@@ -5,7 +5,7 @@ import { selectUser } from "../../store/user/selectors";
 import { selectMatches } from "../../store/gameList/selectors";
 import { fetchGamesList } from "../../store/gameList/actions";
 import Container from "react-bootstrap/Container";
-import { updateRequest } from "../../store/gameList/actions";
+import { requestUpdate } from "../../store/matchRequest/actions";
 import "./index.css";
 
 export default function GameList() {
@@ -17,12 +17,15 @@ export default function GameList() {
     dispatch(fetchGamesList());
   }, [dispatch]);
 
-  function add(matchName) {
+  function add(matchName, matchDate, matchTime, matchSide, matchID) {
     if (token === null) {
       alert("Please login to use this function");
     } else {
+      dispatch(
+        requestUpdate(name, matchName, matchDate, matchTime, matchSide, matchID)
+      );
       console.log(
-        ` ${name} whant's a friendly game againts your team ${matchName}`
+        ` ${name} want a friendly game against your team ${matchName},${matchDate},${matchTime},${matchSide},${matchID},`
       );
     }
   }
@@ -97,7 +100,18 @@ export default function GameList() {
                   <div className="Place">{match.matchId}</div>
                 </Container>
 
-                <button className="button" onClick={() => add(match.name)}>
+                <button
+                  className="button"
+                  onClick={() =>
+                    add(
+                      match.name,
+                      match.date,
+                      match.time,
+                      match.side,
+                      match.matchId
+                    )
+                  }
+                >
                   Send request
                 </button>
                 <br />
