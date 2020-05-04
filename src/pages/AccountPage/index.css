@@ -6,7 +6,8 @@
   margin: 0px 0px;
 }
 
-.Account-Container {
+.Account-Container,
+.Matches-Container {
   margin-top: 60px;
   border: 2px solid #0a0a45;
   text-align: center;
@@ -14,6 +15,33 @@
   margin-left: auto;
   margin-right: auto;
   padding: 20px;
+}
+
+.Matches-Inline,
+table,
+th,
+td {
+  border: solid 3px #0a0a45;
+  text-align: center;
+  justify-content: center;
+  padding: 7px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.Matches-Inline,
+tr {
+  border: none;
+}
+
+.Accept-button,
+.Reject-button {
+  background-color: #0a0a45;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  margin: 8px;
+  width: 130px;
 }
 
 @media only screen and (max-width: 600px) {

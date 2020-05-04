@@ -9,6 +9,7 @@ import "./index.css";
 
 export default function AccountPage() {
   const { token, name, email, klasse, image } = useSelector(selectUser);
+
   console.log(image);
   const history = useHistory();
   if (token === null) {
@@ -34,6 +35,34 @@ export default function AccountPage() {
           {email}
         </a>
         <p>{klasse}</p>
+      </div>
+
+      <div className="Matches-Container">
+        <div className="Matches-Inline">
+          <h1>Matches</h1>
+          <table>
+            <tr>
+              <th>Home</th>
+              <th>Away</th>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Side</th>
+              <th>Match id</th>
+              <th>Status</th>
+            </tr>
+            <tr>
+              <td>HYS</td>
+              <td>DSK</td>
+              <td>23-10-2020</td>
+              <td>14:30:00</td>
+              <td>Home</td>
+              <td>1</td>
+              <td>Open</td>
+            </tr>
+          </table>
+          <button className="Accept-button">Accept</button>
+          <button className="Reject-button">Reject</button>
+        </div>
       </div>
     </div>
   );

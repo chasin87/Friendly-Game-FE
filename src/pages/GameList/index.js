@@ -24,9 +24,6 @@ export default function GameList() {
       dispatch(
         requestUpdate(name, matchName, matchDate, matchTime, matchSide, matchID)
       );
-      console.log(
-        ` ${name} want a friendly game against your team ${matchName},${matchDate},${matchTime},${matchSide},${matchID},`
-      );
     }
   }
 

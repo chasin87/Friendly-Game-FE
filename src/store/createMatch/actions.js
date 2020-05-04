@@ -19,14 +19,11 @@ export const addMatch = (date, time, side, userId) => {
     const name = state.user.name;
     const matchId = state.matches.length + 1;
 
-    console.log("id", id);
-
     // console.log(token);
 
     const response = await axios.post(
       `${apiUrl}/match`,
       {
-        id: matchId,
         name: name,
         date,
         time,
