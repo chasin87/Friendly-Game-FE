@@ -16,7 +16,8 @@ export const requestUpdate = (
   awayTeam,
   date,
   time,
-  side,
+  userIdHome,
+  userIdAway,
   matchId
 ) => {
   return async (dispatch, getState) => {
@@ -31,7 +32,8 @@ export const requestUpdate = (
         awayTeam,
         date,
         time,
-        side,
+        userIdHome,
+        userIdAway,
         matchId,
       },
       {

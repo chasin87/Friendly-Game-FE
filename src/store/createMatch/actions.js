@@ -11,7 +11,7 @@ const createMatchAdded = (addMatch) => {
   };
 };
 
-export const addMatch = (date, time, side, userId) => {
+export const addMatch = (date, time, userId) => {
   return async (dispatch, getState) => {
     const state = getState();
     const token = state.user.token;
@@ -27,7 +27,6 @@ export const addMatch = (date, time, side, userId) => {
         name: name,
         date,
         time,
-        side,
         userId: id,
         matchId: matchId,
         matchRequestId: 0,

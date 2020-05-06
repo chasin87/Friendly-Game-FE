@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-
 import { selectUser } from "../../store/user/selectors";
 import { selectMatches } from "../../store/gameList/selectors";
 import { fetchGamesList } from "../../store/gameList/actions";
 import Container from "react-bootstrap/Container";
-import { requestUpdate } from "../../store/matchRequest/actions";
+import { requestUpdate } from "../../store/matchRequests/actions";
 import "./index.css";
 
 export default function GameList() {
-  const { token, name } = useSelector(selectUser);
+  const { token, name, id } = useSelector(selectUser);
   const dispatch = useDispatch();
   const Matches = useSelector(selectMatches);
 
@@ -17,12 +16,20 @@ export default function GameList() {
     dispatch(fetchGamesList());
   }, [dispatch]);
 
-  function add(matchName, matchDate, matchTime, matchSide, matchID) {
+  function add(matchName, matchDate, matchTime, matchUserId, matchId, matchID) {
     if (token === null) {
       alert("Please login to use this function");
     } else {
       dispatch(
-        requestUpdate(name, matchName, matchDate, matchTime, matchSide, matchID)
+        requestUpdate(
+          matchName,
+          name,
+          matchDate,
+          matchTime,
+          matchUserId,
+          matchId,
+          matchID
+        )
       );
     }
   }
@@ -53,8 +60,8 @@ export default function GameList() {
                 </Container>
 
                 <Container className="ContainerBox">
-                  <label>Place</label>
-                  <div className="Place">{match.side}</div>
+                  <label>User Id:</label>
+                  <div className="Place">{match.userId}</div>
                 </Container>
 
                 <Container className="ContainerBox">
@@ -88,8 +95,8 @@ export default function GameList() {
                 </Container>
 
                 <Container className="ContainerBox">
-                  <label>Place</label>
-                  <div className="Place">{match.side}</div>
+                  <label>User Id:</label>
+                  <div className="Place">{match.userId}</div>
                 </Container>
 
                 <Container className="ContainerBox">
@@ -104,7 +111,8 @@ export default function GameList() {
                       match.name,
                       match.date,
                       match.time,
-                      match.side,
+                      match.userId,
+                      id,
                       match.matchId
                     )
                   }

@@ -12,7 +12,6 @@ export default function CreateGame() {
   const dispatch = useDispatch();
   const [date, setDate] = useState("");
   const [time, setTime] = useState("10:00");
-  const [side, setSide] = useState("");
 
   useEffect(() => {
     dispatch(fetchGamesList());
@@ -21,11 +20,10 @@ export default function CreateGame() {
   function submitMatchForm(event) {
     event.preventDefault();
 
-    dispatch(addMatch(date, time, side));
+    dispatch(addMatch(date, time));
 
     setDate("");
     setTime("10:00");
-    setSide("");
   }
 
   return (
@@ -54,21 +52,6 @@ export default function CreateGame() {
             required
           />
         </Form.Group>
-        <div className="form-group">
-          <label htmlFor="sel1">Home or Away</label>
-          <select
-            className="form-control"
-            id="sel1"
-            value={side}
-            onChange={(event) => setSide(event.target.value)}
-          >
-            <option disabled value="" hidden>
-              Please choose side.
-            </option>
-            <option>Home</option>
-            <option>Away</option>
-          </select>
-        </div>
         <button className="button" type="submit" onClick={submitMatchForm}>
           Create Match
         </button>
