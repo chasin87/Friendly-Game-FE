@@ -20,13 +20,21 @@ export default function Navigation() {
       className="navbar sticky-top"
       // bg="light"
       expand="lg"
-      style={{ background: "white", marginBottom: 30, marginTop: 30 }}
+      style={{
+        background: "#ff7344",
+        marginBottom: 30,
+        marginTop: 30,
+      }}
     >
       <Navbar.Brand as={NavLink} to="/">
         <img
           src={Logo}
           alt="logo"
-          style={{ width: 130, marginBottom: -40, marginTop: -40 }}
+          style={{
+            width: 130,
+            marginBottom: -40,
+            marginTop: -40,
+          }}
         />
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />

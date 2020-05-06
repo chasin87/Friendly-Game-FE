@@ -41,7 +41,6 @@
   font-weight: 200;
   font-size: 18px;
   border-radius: 2px;
-
   text-align: center;
 }
 .ContainerBox {
@@ -56,6 +55,14 @@
   border-radius: 4px;
   margin-top: 8px;
   width: 70%;
+}
+.button:hover {
+  transition-delay: 0.1s;
+  background-color: white;
+  color: #0a0a45;
+  -webkit-box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
 }
 
 label {
