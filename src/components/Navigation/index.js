@@ -8,6 +8,7 @@ import NavbarItem from "./NavbarItem";
 import Logo from "../../images/logo.png";
 import LoggedIn from "./LoggedIn";
 import LoggedOut from "./LoggedOut";
+import "./index.css";
 
 export default function Navigation() {
   const token = useSelector(selectToken);
@@ -15,9 +16,18 @@ export default function Navigation() {
   const loginLogoutControls = token ? <LoggedIn /> : <LoggedOut />;
 
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar
+      className="navbar sticky-top"
+      // bg="light"
+      expand="lg"
+      style={{ background: "white", marginBottom: 30, marginTop: 30 }}
+    >
       <Navbar.Brand as={NavLink} to="/">
-        <img src={Logo} alt="logo" style={{ width: 130, marginBottom: -70 }} />
+        <img
+          src={Logo}
+          alt="logo"
+          style={{ width: 130, marginBottom: -40, marginTop: -40 }}
+        />
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">

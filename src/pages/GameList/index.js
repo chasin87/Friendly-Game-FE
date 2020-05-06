@@ -39,92 +39,98 @@ export default function GameList() {
       <div className="Header-page">
         <h1>Game list</h1>
       </div>{" "}
-      {Matches.map((match) => {
-        if (match.name === name) {
-          return (
-            <Container key={match.id} className="flex-container">
-              <Container className="ContainerCard">
-                <Container className="ContainerBox">
-                  <label>Team Name</label>
-                  <div className="TeamName">{match.name}</div>
+      <div className="match-list">
+        {Matches.map((match) => {
+          if (match.name === name) {
+            return (
+              <div className="card">
+                <Container key={match.id} className="flex-container">
+                  <Container className="ContainerCard">
+                    <Container className="ContainerBox">
+                      <label>Team Name</label>
+                      <div className="TeamName">{match.name}</div>
+                    </Container>
+
+                    <Container className="ContainerBox">
+                      <label>Date</label>
+                      <div className="Date">{match.date}</div>
+                    </Container>
+
+                    <Container className="ContainerBox">
+                      <label>Time</label>
+                      <div className="Date">{match.time}</div>
+                    </Container>
+
+                    <Container className="ContainerBox">
+                      <label>User Id:</label>
+                      <div className="Place">{match.userId}</div>
+                    </Container>
+
+                    <Container className="ContainerBox">
+                      <label>Match Id:</label>
+                      <div className="Place">{match.matchId}</div>
+                    </Container>
+
+                    <p>This is your own match</p>
+
+                    <br />
+                  </Container>
                 </Container>
+              </div>
+            );
+          } else {
+            return (
+              <div className="card">
+                <Container key={match.id} className="flex-container">
+                  <Container className="ContainerCard">
+                    <Container className="ContainerBox">
+                      <label>Team Name</label>
+                      <div className="TeamName">{match.name}</div>
+                    </Container>
 
-                <Container className="ContainerBox">
-                  <label>Date</label>
-                  <div className="Date">{match.date}</div>
+                    <Container className="ContainerBox">
+                      <label>Date</label>
+                      <div className="Date">{match.date}</div>
+                    </Container>
+
+                    <Container className="ContainerBox">
+                      <label>Time</label>
+                      <div className="Date">{match.time}</div>
+                    </Container>
+
+                    <Container className="ContainerBox">
+                      <label>User Id:</label>
+                      <div className="Place">{match.userId}</div>
+                    </Container>
+
+                    <Container className="ContainerBox">
+                      <label>Match Id:</label>
+                      <div className="Place">{match.matchId}</div>
+                    </Container>
+
+                    <button
+                      className="button"
+                      onClick={() =>
+                        add(
+                          match.name,
+                          match.date,
+                          match.time,
+                          match.userId,
+                          id,
+                          match.matchId
+                        )
+                      }
+                    >
+                      Send request
+                    </button>
+                    <br />
+                  </Container>
                 </Container>
-
-                <Container className="ContainerBox">
-                  <label>Time</label>
-                  <div className="Date">{match.time}</div>
-                </Container>
-
-                <Container className="ContainerBox">
-                  <label>User Id:</label>
-                  <div className="Place">{match.userId}</div>
-                </Container>
-
-                <Container className="ContainerBox">
-                  <label>Match Id:</label>
-                  <div className="Place">{match.matchId}</div>
-                </Container>
-
-                <p>This is your own match</p>
-
-                <br />
-              </Container>
-            </Container>
-          );
-        } else {
-          return (
-            <Container key={match.id} className="flex-container">
-              <Container className="ContainerCard">
-                <Container className="ContainerBox">
-                  <label>Team Name</label>
-                  <div className="TeamName">{match.name}</div>
-                </Container>
-
-                <Container className="ContainerBox">
-                  <label>Date</label>
-                  <div className="Date">{match.date}</div>
-                </Container>
-
-                <Container className="ContainerBox">
-                  <label>Time</label>
-                  <div className="Date">{match.time}</div>
-                </Container>
-
-                <Container className="ContainerBox">
-                  <label>User Id:</label>
-                  <div className="Place">{match.userId}</div>
-                </Container>
-
-                <Container className="ContainerBox">
-                  <label>Match Id:</label>
-                  <div className="Place">{match.matchId}</div>
-                </Container>
-
-                <button
-                  className="button"
-                  onClick={() =>
-                    add(
-                      match.name,
-                      match.date,
-                      match.time,
-                      match.userId,
-                      id,
-                      match.matchId
-                    )
-                  }
-                >
-                  Send request
-                </button>
-                <br />
-              </Container>
-            </Container>
-          );
-        }
-      })}
+              </div>
+            );
+          }
+        })}
+      </div>
     </div>
   );
 }
