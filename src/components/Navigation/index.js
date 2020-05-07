@@ -21,7 +21,7 @@ export default function Navigation() {
       // bg="light"
       expand="lg"
       style={{
-        background: "#ff7344",
+        background: "#e8491d",
         marginBottom: 30,
         marginTop: 30,
       }}
@@ -50,7 +50,7 @@ export default function Navigation() {
             <NavbarItem path="/account" linkText="Account Page" />
           ) : null}
           {loginLogoutControls}
-          <NavbarItem path="/signup" linkText="SignUp" />
+          {!token ? <NavbarItem path="/signup" linkText="SignUp" /> : null}
         </Nav>
       </Navbar.Collapse>
     </Navbar>

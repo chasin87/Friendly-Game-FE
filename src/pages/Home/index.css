@@ -58,11 +58,14 @@
   }
 }
 
-.First-block-text {
-  background-color: #0a0a45;
+.card-text-center {
+  /* background-color: #e8491e; */
+  border-radius: 0;
+  border: 2px solid #e8491e;
   color: #0a0a45;
   padding: 20px 0px;
-  margin: 20px 0px;
+  /* margin: 20px 0px; */
+  margin-top: 30px;
   text-align: center;
 
   -webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */

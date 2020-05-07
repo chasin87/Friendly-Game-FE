@@ -1,3 +1,15 @@
 * {
   font-family: "Quicksand", sans-serif;
 }
+
+footer {
+  padding: 30px;
+  margin-top: 20px;
+  color: #f4f4f4;
+  background-color: #e8491d;
+  font-size: 16px;
+  text-align: center;
+}
+footer span {
+  font-weight: 900;
+}

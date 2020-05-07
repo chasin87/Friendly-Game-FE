@@ -44,14 +44,14 @@ export default function SignUp() {
         <h1>Signup </h1>
       </div>
       <Container>
-        <Form as={Col} md={{ span: 6, offset: 3 }} className="mt-5">
+        <Form>
           <Form.Group controlId="formBasicName">
             <Form.Label>Team</Form.Label>
             <Form.Control
               value={name}
               onChange={(event) => setName(event.target.value)}
               type="text"
-              placeholder="Fc Soccer zat 1"
+              placeholder="Enter your team name"
               required
             />
           </Form.Group>
@@ -73,7 +73,7 @@ export default function SignUp() {
               value={email}
               onChange={(event) => setEmail(event.target.value)}
               type="email"
-              placeholder="Enter email"
+              placeholder="Enter your email"
               required
             />
             {/* <Form.Text className="text-muted">
@@ -87,31 +87,26 @@ export default function SignUp() {
               value={password}
               onChange={(event) => setPassword(event.target.value)}
               type="password"
-              placeholder="Password"
+              placeholder="Enter your password"
               required
             />
           </Form.Group>
 
           <Form.Group controlId="formBasicNumber">
-            <Form.Label>Klasse</Form.Label>
+            <Form.Label>Division</Form.Label>
             <Form.Control
               value={klasse}
               onChange={(event) => setKlasse(event.target.value)}
               type="input"
-              placeholder="bijv. 2e klasse"
+              placeholder="Enter your division"
               required
             />
           </Form.Group>
 
           <Form.Group className="mt-5">
-            <Button
-              variant="primary"
-              type="submit"
-              onClick={submitForm}
-              style={{ background: "#0a0a45" }}
-            >
+            <button className="button" type="submit" onClick={submitForm}>
               Sign up
-            </Button>
+            </button>
           </Form.Group>
           <Link to="/login">Click here to log in</Link>
         </Form>

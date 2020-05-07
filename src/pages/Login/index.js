@@ -37,14 +37,14 @@ export default function SignUp() {
         <h1>Login </h1>
       </div>
       <Container className="LoginContainer">
-        <Form as={Col} md={{ span: 6, offset: 3 }} className="mt-3">
+        <Form>
           <Form.Group controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
             <Form.Control
               value={email}
               onChange={(event) => setEmail(event.target.value)}
               type="email"
-              placeholder="Enter email"
+              placeholder="Enter your email"
               required
             />
           </Form.Group>
@@ -55,19 +55,14 @@ export default function SignUp() {
               value={password}
               onChange={(event) => setPassword(event.target.value)}
               type="password"
-              placeholder="Password"
+              placeholder="Enter your password"
               required
             />
           </Form.Group>
           <Form.Group className="mt-5">
-            <Button
-              variant="primary"
-              type="submit"
-              onClick={submitForm}
-              style={{ background: "#0a0a45" }}
-            >
+            <button className="button" type="submit" onClick={submitForm}>
               Log in
-            </Button>
+            </button>
           </Form.Group>
           <Link to="/signup" style={{ textAlign: "center", color: "#0a0a45" }}>
             Click here to sign up

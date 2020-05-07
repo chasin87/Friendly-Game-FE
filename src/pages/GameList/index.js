@@ -50,6 +50,7 @@ export default function GameList() {
                       <label>Team Name</label>
                       <div className="TeamName">{match.name}</div>
                     </Container>
+                    <div></div>
 
                     <Container className="ContainerBox">
                       <label>Date</label>
