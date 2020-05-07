@@ -59,7 +59,7 @@ export default function AccountPage() {
           <h1> Requested Matches</h1>
           {request.map((reqs) => {
             return (
-              <div>
+              <div key={reqs.id}>
                 <table>
                   <tr>
                     <th>Home</th>
