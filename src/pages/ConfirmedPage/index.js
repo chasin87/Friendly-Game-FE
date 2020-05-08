@@ -12,48 +12,50 @@ export default function ConfirmedPage() {
     dispatch(fetchConfGamesList());
   }, [dispatch]);
 
-  return (
+  return confMatches.length ? (
     <div>
       <div className="Header-page">
         <h1>Confirmed Matches</h1>
       </div>
 
       <div className="match-list">
-        {confMatches.map((confMatch) => {
-          return confMatches.length ? (
-            <div className="card">
-              <Container key={confMatch.id} className="flex-container">
-                <Container className="ContainerCard">
-                  <Container className="ContainerBox">
-                    <label>Home Team</label>
-                    <div className="TeamName">{confMatch.homeTeam}</div>
-                  </Container>
+        {confMatches.map((confMatch) => (
+          <div className="card">
+            <Container key={confMatch.id} className="flex-container">
+              <Container className="ContainerCard">
+                <Container className="ContainerBox">
+                  <label>Home Team</label>
+                  <div className="TeamName">{confMatch.homeTeam}</div>
+                </Container>
 
-                  <Container className="ContainerBox">
-                    <label>Away Team</label>
-                    <div className="TeamName">{confMatch.awayTeam}</div>
-                  </Container>
+                <Container className="ContainerBox">
+                  <label>Away Team</label>
+                  <div className="TeamName">{confMatch.awayTeam}</div>
+                </Container>
 
-                  <Container className="ContainerBox">
-                    <label>Date</label>
-                    <div className="Date">{confMatch.date}</div>
-                  </Container>
+                <Container className="ContainerBox">
+                  <label>Date</label>
+                  <div className="Date">{confMatch.date}</div>
+                </Container>
 
-                  <Container className="ContainerBox">
-                    <label>Time</label>
-                    <div className="Date">{confMatch.time}</div>
-                  </Container>
+                <Container className="ContainerBox">
+                  <label>Time</label>
+                  <div className="Date">{confMatch.time}</div>
+                </Container>
 
-                  <Container className="ContainerBox">
-                    <label>Match Id:</label>
-                    <div className="Place">{confMatch.matchId}</div>
-                  </Container>
+                <Container className="ContainerBox">
+                  <label>Match Id:</label>
+                  <div className="Place">{confMatch.matchId}</div>
                 </Container>
               </Container>
-            </div>
-          ) : null;
-        })}
+            </Container>
+          </div>
+        ))}
       </div>
+    </div>
+  ) : (
+    <div className="Header-page">
+      <h1>Confirmed Matches</h1>
     </div>
   );
 }
