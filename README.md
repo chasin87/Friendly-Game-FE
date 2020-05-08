@@ -56,7 +56,7 @@ _[PostgreSQL]
 
 ### Data Model
 
-![](not available yet)
+![](src/images/Data-model.png)
 
 ### Instalation
 
