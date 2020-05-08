@@ -9,6 +9,7 @@ import "./index.css";
 
 export default function GameList() {
   const { token, name, id } = useSelector(selectUser);
+
   const dispatch = useDispatch();
   const Matches = useSelector(selectMatches);
 
@@ -37,7 +38,7 @@ export default function GameList() {
   return (
     <div>
       <div className="Header-page">
-        <h1>Game list</h1>
+        <h1>Match list</h1>
       </div>{" "}
       <div className="match-list">
         {Matches.map((match) => {
@@ -72,7 +73,7 @@ export default function GameList() {
                       <div className="Place">{match.matchId}</div>
                     </Container>
 
-                    <p>This is your own match</p>
+                    <p style={{ fontWeight: 600 }}>This is your own match</p>
 
                     <br />
                   </Container>
@@ -108,22 +109,28 @@ export default function GameList() {
                       <label>Match Id:</label>
                       <div className="Place">{match.matchId}</div>
                     </Container>
-
-                    <button
-                      className="button"
-                      onClick={() =>
-                        add(
-                          match.name,
-                          match.date,
-                          match.time,
-                          match.userId,
-                          id,
-                          match.matchId
-                        )
-                      }
-                    >
-                      Send request
-                    </button>
+                    {}
+                    {token ? (
+                      <button
+                        className="button"
+                        onClick={() => {
+                          add(
+                            match.name,
+                            match.date,
+                            match.time,
+                            match.userId,
+                            id,
+                            match.matchId
+                          );
+                        }}
+                      >
+                        Send request
+                      </button>
+                    ) : (
+                      <p style={{ fontWeight: 600 }}>
+                        Please login to send a request
+                      </p>
+                    )}
                     <br />
                   </Container>
                 </Container>

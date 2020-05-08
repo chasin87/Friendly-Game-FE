@@ -8,10 +8,9 @@ export const fetchRequest = (request) => ({
   payload: request,
 });
 
-export function fetchRequestList(userIdHome, userIdAway) {
+export function fetchRequestList(userIdHome) {
   return async (dispatch, getState) => {
     const response = await axios.get(`${apiUrl}/matchrequests/${userIdHome}`);
-    console.log("res", response);
     dispatch(fetchRequest(response.data));
   };
 }

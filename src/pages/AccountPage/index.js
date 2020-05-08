@@ -6,16 +6,14 @@ import { selectRequests } from "../../store/matchRequestById/selectors";
 
 import { selectMatches } from "../../store/gameList/selectors";
 import { fetchGamesList } from "../../store/gameList/actions";
-
+import { confirmUpdate } from "../../store/confirmedMatches/actions";
 import Loading from "../../components/Loading";
 import { useHistory } from "react-router-dom";
 import "./index.css";
 
 export default function AccountPage() {
   const dispatch = useDispatch();
-
   const request = useSelector(selectRequests);
-
   const { token, name, email, klasse, image, id } = useSelector(selectUser);
   const Matches = useSelector(selectMatches);
 
@@ -33,6 +31,10 @@ export default function AccountPage() {
   }
   if (name === null) {
     return <Loading />;
+  }
+
+  function add(homeTeam, awayTeam, date, time, matchId) {
+    dispatch(confirmUpdate(homeTeam, awayTeam, date, time, matchId));
   }
 
   return (
@@ -83,7 +85,20 @@ export default function AccountPage() {
                   </tr>
                 </table>
 
-                <button className="Accept-button">Accept</button>
+                <button
+                  className="Accept-button"
+                  onClick={() => {
+                    add(
+                      reqs.homeTeam,
+                      reqs.awayTeam,
+                      reqs.date,
+                      reqs.time,
+                      reqs.matchId
+                    );
+                  }}
+                >
+                  Accept
+                </button>
                 <button className="Reject-button">Reject</button>
               </div>
             );

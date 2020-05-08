@@ -41,10 +41,10 @@ export default function Navigation() {
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav style={{ width: "100%" }} fill>
           <NavbarItem path="/" linkText="Home" />
-          <NavbarItem path="/gamelist" linkText="Game List" />
-
+          <NavbarItem path="/confirmedpage" linkText="Confirmed Match" />
+          <NavbarItem path="/gamelist" linkText="Match List" />
           {token ? (
-            <NavbarItem path="/creategame" linkText="Create Game" />
+            <NavbarItem path="/creategame" linkText="Create Match" />
           ) : null}
           {token ? (
             <NavbarItem path="/account" linkText="Account Page" />

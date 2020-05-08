@@ -23,7 +23,6 @@ export const requestUpdate = (
   return async (dispatch, getState) => {
     const state = getState();
     const token = state.user.token;
-    // const id = state.user.id;
 
     const response = await axios.post(
       `${apiUrl}/matchRequests`,
