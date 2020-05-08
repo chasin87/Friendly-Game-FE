@@ -1,42 +1,71 @@
-# Frontend template
+# Friendly Games
 
-This is a simple react/redux/jwt template to start a project quickly
+Friendly Games is an application that allows to create amateur soccer associations to reach each other for friendly Matches.
 
 ## Table of contents:
 
-- **[Setup](#setup-how-to-use-this-template)**
-- **[Create React App docs](#cra-docs)**
+- **[App demo](#app-demo)**
+- **[Goals for this project](#goals-for-this-project)**
+- **[Technologies used](#technologies-used)**
+- **[User stories](#user-stories)**
+- **[Data Model](#data-model)**
+- **[Server repo](#server-repo)**
 
-## SETUP How to use this template
+### App demo:
 
-1. Create a new project based on this template using the `Use this template` button
+![](src/images/demo/1-Landing-page.png)
+![](src/images/demo/2-Register-page.png)
+![](src/images/demo/3-Login-page.png)
+![](src/images/demo/4-Create-Match-page.png)
+![](src/images/demo/5-Match-list-page.png
+![](src/images/demo/6-Account-page.png)
+![](src/images/demo/7-Match-list-page-2ndUser.png)
+![](src/images/demo/8-Account-page-after-request-2ndUser.png)
+![](src/images/demo/9-Confirmed-match-page.png)
+![](src/images/demo/10-Landing-page-with-confirmed-matches.png)
 
-![HOW_TO_USE](https://user-images.githubusercontent.com/20372832/77003323-70966180-695d-11ea-8abe-b362d57135f3.gif)
+### Goals for this project
 
-2. Clone the app
+The goal of this project is to build a full-stack app by using technologies I've learned during full-stack web developer bootcamp and using new technologies.
 
-```
-git clone git@github.com:YOUR_GITHUB_NAME/YOUR_PROJECT_NAME.git
-```
+### Technologies used:
 
-3. cd into your project
+#### FRONT END:
 
-```
-cd YOUR_PROJECT_NAME
-```
+_[REACT]
+_[REDUX]
+_[CSS]
+_[BOOTSTRAP]
 
-4. install dependencies
+#### BACK END:
 
-```
-npm install
-```
+_[Express_on_Node.js]
+_[REST_API]
+_[Sequelize]
+_[PostgreSQL]
 
-5. Start development server with npm start
+### User Stories
 
-```
-npm start
-```
+- As a user, I want to matches which are confirmed
+- As a user, I want to create matches
+- As a user, I want to see the available matches
+- As a user, I want to send a request to available matches
+- As a user, I want to confirm requested matches
+- As a user, I want to see all my created, reuested and confirmed matches.
 
-## CRA docs
+### Data Model
 
-The normal Create React App docs can be found in [CRA_DOCS.md](./CRA_DOCS.md)
+![](not available yet)
+
+### Instalation
+
+1. Clone the app
+2. cd into your project
+3. install dependencies (npm install)
+4. Start development server with (npm start)
+
+### Server Repo
+
+The server of this project is built with Express on Node.js connected to Postgres database.
+
+[Click here to view server repo](https://github.com/chasin87/Friendly-Game-BE)
