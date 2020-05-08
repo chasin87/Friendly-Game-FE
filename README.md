@@ -9,6 +9,7 @@ Friendly Games is an application that allows to create amateur soccer associatio
 - **[Technologies used](#technologies-used)**
 - **[User stories](#user-stories)**
 - **[Data Model](#data-model)**
+- **[Instalation](#instalation)**
 - **[Server repo](#server-repo)**
 
 ### App demo:
